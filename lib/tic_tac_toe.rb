@@ -56,9 +56,9 @@ class TicTacToe
     num_turns = turn_count
     @player = ""
     if num_turns % 2 == 0
-      @player + "X"
+      @player = "X"
     else
-      @player + "O"
+      @player = "O"
     end
     return @player
   end

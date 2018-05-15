@@ -112,12 +112,12 @@ class TicTacToe
     end
   end
 
-  def winner(board)
+  def winner
      win = nil
      WIN_COMBINATIONS.each do |index|
-       if (board[index[0]] == "X" && board[index[1]] == "X" && board[index[2]] == "X")
+       if (@board[index[0]] == "X" && @board[index[1]] == "X" && @board[index[2]] == "X")
          win = "X"
-       elsif (board[index[0]] == "O" && board[index[1]] == "O" && board[index[2]] == "O")
+       elsif (@board[index[0]] == "O" && @board[index[1]] == "O" && @board[index[2]] == "O")
          win = "O"
        end
      end

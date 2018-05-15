@@ -65,8 +65,8 @@ class TicTacToe
     puts "Please enter 1-9:"
     user_input = gets.chomp
     index = input_to_index(user_input)
+    player_token = current_player
     if valid_move?(index)
-      player_token = current_player
       position_taken?(index)
       move(index, player_token)
       display_board
@@ -74,7 +74,7 @@ class TicTacToe
       turn
     end
   end
-
+  
 
 
 

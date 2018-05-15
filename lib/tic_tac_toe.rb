@@ -55,11 +55,11 @@ class TicTacToe
   def current_player
     num_turns = turn_count
     if num_turns % 2 == 0
-      player = "X"
+      @player = "X"
     else
-      player = "O"
+      @player = "O"
     end
-    return player
+    return @player
   end
 
   def turn
@@ -68,7 +68,7 @@ class TicTacToe
     user_input = gets.chomp
     index = input_to_index(user_input)
     if valid_move?(index)
-      player_token = current_player
+      @player_token = current_player
       position_taken?(index)
       move(index, player_token)
       display_board

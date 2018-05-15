@@ -90,6 +90,38 @@ class TicTacToe
     end
   end
 
+  def full?
+    @board.all? do |i|
+      i == "X" || i == "O"
+    end
+  end
 
+  def draw?
+    if won? == false && full? == true
+      true
+    else
+      false
+    end
+  end
+
+  def over?
+    if draw? || won?
+      true
+    else
+      false
+    end
+  end
+
+  def winner(board)
+     win = nil
+     WIN_COMBINATIONS.each do |index|
+       if (board[index[0]] == "X" && board[index[1]] == "X" && board[index[2]] == "X")
+         win = "X"
+       elsif (board[index[0]] == "O" && board[index[1]] == "O" && board[index[2]] == "O")
+         win = "O"
+       end
+     end
+     return win
+  end
 
 end

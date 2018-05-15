@@ -74,6 +74,21 @@ class TicTacToe
     end
   end
 
+  def won?
+    match_array = []
+    WIN_COMBINATIONS.each do |index|
+      if (@board[index[0]] == "X" && @board[index[1]] == "X" && @board[index[2]] == "X") || (@board[index[0]] == "O" && @board[index[1]] == "O" && @board[index[2]] == "O")
+        index.each do |a|
+          match_array << a
+        end
+      end
+    end
+    if match_array.empty? == true || match_array.nil? == true
+      false
+    else
+      return match_array
+    end
+  end
 
 
 
